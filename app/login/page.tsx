@@ -13,12 +13,11 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import { OAuthButtons } from "./oauth-signin";
 
-export default async function Login({
-  searchParams,
-}: {
-  searchParams: { message: string };
+export default async function Login(props: {
+  searchParams: Promise<{ message: string }>;
 }) {
   const supabase = await createClient();
+  const searchParams = await props.searchParams;
 
   const {
     data: { user },
