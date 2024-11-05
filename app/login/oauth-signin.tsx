@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Provider } from "@supabase/supabase-js";
 import { Github } from "lucide-react";
+import GoogleIcon from "@/components/ui/icons/google";
 import { oAuthSignIn } from "./actions";
 
 type OAuthProvider = {
@@ -12,10 +13,15 @@ type OAuthProvider = {
 
 export function OAuthButtons() {
   const oAuthProviders: OAuthProvider[] = [
+    // {
+    //   name: "github",
+    //   displayName: "GitHub",
+    //   icon: <Github className="size-5" />,
+    // },
     {
-      name: "github",
-      displayName: "GitHub",
-      icon: <Github className="size-5" />,
+      name: "google",
+      displayName: "Google",
+      icon: <GoogleIcon className="size-5" />,
     },
   ];
 
